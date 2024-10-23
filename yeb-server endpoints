@@ -1,0 +1,2416 @@
+{
+	"info": {
+		"_postman_id": "f48fdfcf-ab87-4576-a6fe-71c8d0693247",
+		"name": "YebApp API Endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17009118"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Link}}/api/users/{id}/",
+							"host": [
+								"{{Link}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Specific User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{Link}}/api/users/{id}/",
+							"host": [
+								"{{Link}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Partially update a specific user",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{Link}}/api/users/{id}/",
+							"host": [
+								"{{Link}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Specific user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Link}}/api/users/{id}/",
+							"host": [
+								"{{Link}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Contains"
+		},
+		{
+			"name": "User Details",
+			"item": [
+				{
+					"name": "Get User Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Link}}/api/user-details/",
+							"host": [
+								"{{Link}}"
+							],
+							"path": [
+								"api",
+								"user-details",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User Details",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{Link}}/api/user-details/",
+							"host": [
+								"{{Link}}"
+							],
+							"path": [
+								"api",
+								"user-details",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific User Detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Link}}/api/user-details/{id}/",
+							"host": [
+								"{{Link}}"
+							],
+							"path": [
+								"api",
+								"user-details",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Specific User Detail",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{Link}}/api/user-details/{id}/",
+							"host": [
+								"{{Link}}"
+							],
+							"path": [
+								"api",
+								"user-details",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Specific User Detail",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Link}}/api/user-details/{id}/",
+							"host": [
+								"{{Link}}"
+							],
+							"path": [
+								"api",
+								"user-details",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Partially update a detail",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{Link}}/api/user-details/{id}/",
+							"host": [
+								"{{Link}}"
+							],
+							"path": [
+								"api",
+								"user-details",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Achievements",
+			"item": [
+				{
+					"name": "GET /api/achievements/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/achievements/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"achievements",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/achievements/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/achievements/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"achievements",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/achievements/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/achievements/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"achievements",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH /api/achievements/{id}",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/achievements/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"achievements",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/achievements/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/achievements/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"achievements",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /api/achievements/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/achievements/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"achievements",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Yeb Offers",
+			"item": [
+				{
+					"name": "GET /api/yeb-offers/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/yeb-offers/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"yeb-offers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/yeb-offers/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/yeb-offers/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"yeb-offers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/yeb-offers/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/yeb-offers/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"yeb-offers",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/yeb-offers/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/yeb-offers/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"yeb-offers",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH /api/yeb-offers/{id}",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/yeb-offers/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"yeb-offers",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /api/yeb-offers/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/yeb-offers/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"yeb-offers",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Yeb Applications",
+			"item": [
+				{
+					"name": "GET /api/yeb-applications/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/yeb-applications/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"yeb-applications",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/yeb-applications/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/yeb-applications/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"yeb-applications",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/yeb-applications/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/yeb-applications/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"yeb-applications",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/yeb-applications/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/yeb-applications/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"yeb-applications",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH /api/yeb-applications/{id}",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/yeb-applications/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"yeb-applications",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /api/yeb-applications/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/yeb-applications/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"yeb-applications",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GD",
+			"item": [
+				{
+					"name": "GET /api/gds/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/gds/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"gds",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/gds/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/gds/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"gds",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/gds/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/gds/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"gds",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/gds/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/gds/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"gds",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH /api/gds/{id}",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/gds/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"gds",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /api/gds/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/gds/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"gds",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Travels",
+			"item": [
+				{
+					"name": "GET /api/travels/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/travels/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"travels",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/travels/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/travels/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"travels",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/travels/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/travels/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"travels",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/travels/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/travels/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"travels",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH /api/travels/{id}",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/travels/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"travels",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /api/travels/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/travels/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"travels",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Accommodations",
+			"item": [
+				{
+					"name": "GET /api/accommodations/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/accommodations/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"accommodations",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/accommodations/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/accommodations/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"accommodations",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH /api/accommodations/{id}",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/accommodations/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"accommodations",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /api/accommodations/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/accommodations/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"accommodations",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/announcements/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/announcements/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"announcements",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/accommodations/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/accommodations/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"accommodations",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/accommodations/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/accommodations/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"accommodations",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/announcements/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/announcements/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"announcements",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/announcements/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/announcements/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"announcements",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/announcements/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/announcements/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"announcements",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH /api/announcements/{id}",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/announcements/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"announcements",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /api/announcements/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/announcements/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"announcements",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chat Message",
+			"item": [
+				{
+					"name": "GET /api/chat-messages/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/chat-messages/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"chat-messages",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/chat-messages/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/chat-messages/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"chat-messages",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/chat-messages/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/chat-messages/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"chat-messages",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/chat-messages/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/chat-messages/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"chat-messages",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH /api/chat-messages/{id}",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/chat-messages/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"chat-messages",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /api/chat-messages/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/chat-messages/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"chat-messages",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Schedules",
+			"item": [
+				{
+					"name": "GET /api/schedules/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/schedules/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"schedules",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/schedules/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/schedules/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"schedules",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/schedules/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/schedules/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"schedules",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/schedules/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/schedules/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"schedules",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH /api/schedules/{id}",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/schedules/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"schedules",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /api/schedules/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/schedules/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"schedules",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Feedbacks",
+			"item": [
+				{
+					"name": "GET /api/feedbacks/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/feedbacks/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"feedbacks",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/feedbacks/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/feedbacks/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"feedbacks",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/feedbacks/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/feedbacks/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"feedbacks",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/feedbacks/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/feedbacks/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"feedbacks",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH /api/feedbacks/{id}",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/feedbacks/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"feedbacks",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /api/feedbacks/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/feedbacks/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"feedbacks",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Submissions",
+			"item": [
+				{
+					"name": "GET /api/submissions/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/submissions/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"submissions",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/submissions/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/submissions/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"submissions",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/submissions/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/submissions/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"submissions",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/submissions/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/submissions/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"submissions",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH /api/submissions/{id}",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/submissions/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"submissions",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /api/submissions/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/submissions/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"submissions",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Assignment",
+			"item": [
+				{
+					"name": "GET /api/assignments/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/assignments/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assignments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/assignments/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/assignments/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assignments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/assignments/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/assignments/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assignments",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/assignments/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/assignments/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assignments",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH /api/assignments/{id}",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/assignments/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assignments",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /api/assignments/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/assignments/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assignments",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payments",
+			"item": [
+				{
+					"name": "GET /api/payments/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/payments/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"payments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/payments/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/payments/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"payments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/payments/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/payments/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"payments",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/payments/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/payments/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"payments",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH /api/payments/{id}",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/payments/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"payments",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /api/payments/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/payments/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"payments",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fees",
+			"item": [
+				{
+					"name": "GET /api/fees/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/fees/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"fees",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/fees/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/fees/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"fees",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/fees/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/fees/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"fees",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/fees/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/fees/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"fees",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH /api/fees/{id}",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/fees/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"fees",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /api/fees/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/fees/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"fees",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Participant Teams",
+			"item": [
+				{
+					"name": "GET /api/participant-teams/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/participant-teams/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"participant-teams",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/participant-teams/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/participant-teams/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"participant-teams",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/participant-teams/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/participant-teams/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"participant-teams",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/participant-teams/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/participant-teams/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"participant-teams",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH /api/participant-teams/{id}",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/participant-teams/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"participant-teams",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /api/participant-teams/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/participant-teams/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"participant-teams",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Group Message",
+			"item": [
+				{
+					"name": "GET /api/group-messages/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/group-messages/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"group-messages",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/group-messages/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/group-messages/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"group-messages",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/group-messages/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/group-messages/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"group-messages",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/group-messages/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/group-messages/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"group-messages",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH /api/group-messages/{id}",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/group-messages/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"group-messages",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /api/group-messages/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/group-messages/{id}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"group-messages",
+								"{id}",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
