@@ -6,7 +6,7 @@ from .views import (
     YebApplicationViewSet, GDViewSet, TravelViewSet, AccommodationViewSet, 
     AnnouncementViewSet, ChatMessageViewSet, ScheduleViewSet, FeedbackViewSet, 
     SubmissionViewSet, AssignmentViewSet, PaymentViewSet, FeeViewSet, 
-    ParticipantTeamViewSet, GroupMessageViewSet
+    ParticipantTeamViewSet, GroupMessageViewSet,StdGDViewSet
 )
 
 
@@ -20,9 +20,9 @@ router.register(r'achievements', AchievementViewSet)
 router.register(r'yeb-offers', YebOfferViewSet)
 router.register(r'yeb-applications', YebApplicationViewSet)
 router.register(r'gds', GDViewSet)
+router.register(r'std-gd', StdGDViewSet)
 router.register(r'travels', TravelViewSet)
 router.register(r'accommodations', AccommodationViewSet)
-
 router.register(r'chat-messages', ChatMessageViewSet)
 router.register(r'schedules', ScheduleViewSet)
 router.register(r'feedbacks', FeedbackViewSet)
@@ -32,6 +32,7 @@ router.register(r'payments', PaymentViewSet)
 router.register(r'fees', FeeViewSet)
 router.register(r'participant-teams', ParticipantTeamViewSet)
 router.register(r'group-messages', GroupMessageViewSet)
+
 
 
 urlpatterns = [

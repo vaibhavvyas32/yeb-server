@@ -65,6 +65,9 @@ class GDAdmin(admin.ModelAdmin):
 @admin.register(StdGD)
 class StdGDAdmin(admin.ModelAdmin):
     list_display = ('gd_id', 'student_id', 'marks')
+    form = MarksForm
+    exclude = ['marks']
+
 
 @admin.register(Travel)
 class TravelAdmin(admin.ModelAdmin):

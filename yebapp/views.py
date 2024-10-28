@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from .models import User,UserDetail,Achievement,YebOffer,YebApplication,GD, Travel, Accommodation, Announcement, ChatMessage, Schedule, Feedback, Submission, Assignment, Payment, Fee, ParticipantTeam, GroupMessage
+from .models import User,UserDetail,Achievement,YebOffer,YebApplication,GD,StdGD, Travel, Accommodation, Announcement, ChatMessage, Schedule, Feedback, Submission, Assignment, Payment, Fee, ParticipantTeam, GroupMessage
+from .serializers import UserSerializer, UserDetailSerializer, AchievementSerializer, YebApplicationSerializer, YebOfferSerializer, GdSerializer,StdGDSerializer, TravelSerializer, AccomodationSerializer, AnnouncementSerializer, ChatMessageSerializer, ScheduleSerializer, FeedbackSerializer, SubmissionSerializer, AssignmentSerializer, PaymentSerializer, FeeSerializer, ParticipantTeamSerializer, GroupMessageSerializer
 
-from .serializers import UserSerializer, UserDetailSerializer, AchievementSerializer, YebApplicationSerializer, YebOfferSerializer, GdSerializer, TravelSerializer, AccomodationSerializer, AnnouncementSerializer, ChatMessageSerializer, ScheduleSerializer, FeedbackSerializer, SubmissionSerializer, AssignmentSerializer, PaymentSerializer, FeeSerializer, ParticipantTeamSerializer, GroupMessageSerializer
+
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -28,6 +29,10 @@ class YebApplicationViewSet(viewsets.ModelViewSet):
 class GDViewSet(viewsets.ModelViewSet):
     queryset = GD.objects.all()
     serializer_class = GdSerializer
+
+class StdGDViewSet(viewsets.ModelViewSet):
+    queryset = StdGD.objects.all()
+    serializer_class = StdGDSerializer
 
 class TravelViewSet(viewsets.ModelViewSet):
     queryset = Travel.objects.all()

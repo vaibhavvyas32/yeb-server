@@ -1,7 +1,7 @@
 from rest_framework import serializers,status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import User,UserDetail,Achievement,YebOffer,YebApplication,GD, Travel, Accommodation, Announcement, ChatMessage, Schedule, Feedback, Submission, Assignment, Payment, Fee, ParticipantTeam, GroupMessage
+from .models import User,UserDetail,Achievement,YebOffer,YebApplication,GD,StdGD, Travel, Accommodation, Announcement, ChatMessage, Schedule, Feedback, Submission, Assignment, Payment, Fee, ParticipantTeam, GroupMessage
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -14,14 +14,8 @@ class UserSerializer(serializers.ModelSerializer):
         if len(value) < 3:
             raise serializers.ValidationError("Username must be at least 3 characters long.")
         return value
-
-class UserView(APIView):
-    def post(self,request):
-        serializers = UserSerializer(data=request.data)
-        if serializers.is_valid():
-            serializers.save()
-            return Response(serializers.data, status=status.HTTP_201_CREATED)
-        return Response(serializers.errors, status = status.HTTP_400_BAD_REQUEST)
+    
+    
 
 
 
@@ -56,6 +50,17 @@ class GdSerializer(serializers.ModelSerializer):
     class Meta:
         model = GD
         fields = '__all__'
+
+class StdGDSerializer(serializers.ModelSerializer):
+    user_marks = serializers.SerializerMethodField()
+
+    class Meta:
+        model = StdGD
+        fields = ['gd_id','student_id','marks','user_marks']
+
+    def get_user_marks(self,obj):
+        user_detail = UserDetail.objects.filter(u_key=obj.student_id).first()
+        return user_detail.marks if user_detail else None
 
 class TravelSerializer(serializers.ModelSerializer):
     class Meta:
