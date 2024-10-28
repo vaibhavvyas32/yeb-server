@@ -1,6 +1,6 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 
-# Existing models
 class User(models.Model):
     u_key = models.AutoField(primary_key=True)
     u_name = models.CharField(max_length=255)
@@ -12,6 +12,27 @@ class User(models.Model):
     profile_pic = models.ImageField(upload_to='profile_pics/', null=True, blank=True)
 
 class UserDetail(models.Model):
+    SHIRT_SIZE_CHOICES = [
+        ('XS', 'Extra Small'),
+        ('S', 'Small'),
+        ('M', 'Medium'),
+        ('L', 'Large'),
+        ('XL', 'Extra Large'),
+        ('XXL', 'Double Extra Large'),
+    ]
+    SHIRT_COLOR_CHOICES = [
+        ('Red', 'Red'),
+        ('Blue', 'Blue'),
+        ('Green', 'Green'),
+        ('Yellow', 'Yellow'),
+        ('Black', 'Black'),
+        ('White', 'White'),
+    ]
+
+
+
+
+
     u_key = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     p_name = models.CharField(max_length=255)
     p_email = models.EmailField()
@@ -21,8 +42,8 @@ class UserDetail(models.Model):
     s_city = models.CharField(max_length=100)
     s_state = models.CharField(max_length=100)
     marks = models.JSONField()
-    shirt_size = models.CharField(max_length=10)
-    shirt_color = models.CharField(max_length=10)
+    shirt_size = models.CharField(max_length=10, choices=SHIRT_SIZE_CHOICES)
+    shirt_color = models.CharField(max_length=10, choices=SHIRT_COLOR_CHOICES)
 
 class Achievement(models.Model):
     u_key = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
@@ -165,3 +186,4 @@ class GroupMessage(models.Model):
     message_text = models.TextField()
     active = models.BooleanField(default=True)
     expire_on = models.DateField()
+

@@ -1,4 +1,6 @@
-from rest_framework import serializers
+from rest_framework import serializers,status
+from rest_framework.response import Response
+from rest_framework.views import APIView
 from .models import User,UserDetail,Achievement,YebOffer,YebApplication,GD, Travel, Accommodation, Announcement, ChatMessage, Schedule, Feedback, Submission, Assignment, Payment, Fee, ParticipantTeam, GroupMessage
 
 
@@ -6,11 +8,34 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = '__all__'
+    
+    def validate_username(self,value):
+        print("validating username:", value)
+        if len(value) < 3:
+            raise serializers.ValidationError("Username must be at least 3 characters long.")
+        return value
+
+class UserView(APIView):
+    def post(self,request):
+        serializers = UserSerializer(data=request.data)
+        if serializers.is_valid():
+            serializers.save()
+            return Response(serializers.data, status=status.HTTP_201_CREATED)
+        return Response(serializers.errors, status = status.HTTP_400_BAD_REQUEST)
+
+
+
+
+
+
+
+
 
 class UserDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserDetail
         fields = '__all__'
+    
 
 class AchievementSerializer(serializers.ModelSerializer):
     class Meta:
@@ -92,3 +117,4 @@ class GroupMessageSerializer(serializers.ModelSerializer):
     class Meta:
         model = GroupMessage
         fields = '__all__'
+

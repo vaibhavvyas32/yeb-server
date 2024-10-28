@@ -14,6 +14,7 @@ from .views import (
 
 router = DefaultRouter()
 router.register(r'users', UserViewSet)
+router.register(r'announcements', AnnouncementViewSet)
 router.register(r'user-details', UserDetailViewSet)
 router.register(r'achievements', AchievementViewSet)
 router.register(r'yeb-offers', YebOfferViewSet)
@@ -21,7 +22,7 @@ router.register(r'yeb-applications', YebApplicationViewSet)
 router.register(r'gds', GDViewSet)
 router.register(r'travels', TravelViewSet)
 router.register(r'accommodations', AccommodationViewSet)
-router.register(r'announcements', AnnouncementViewSet)
+
 router.register(r'chat-messages', ChatMessageViewSet)
 router.register(r'schedules', ScheduleViewSet)
 router.register(r'feedbacks', FeedbackViewSet)

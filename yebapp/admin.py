@@ -23,6 +23,7 @@ from .models import (
     ParticipantTeam,
     GroupMessage,
 )
+from .forms import MarksForm
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
@@ -32,6 +33,8 @@ class UserAdmin(admin.ModelAdmin):
 @admin.register(UserDetail)
 class UserDetailAdmin(admin.ModelAdmin):
     list_display = ('u_key', 'p_name', 'p_email', 'p_phone', 'school')
+    exclude = ['marks']
+    form = MarksForm
     search_fields = ('p_name', 'p_email')
 
 @admin.register(Achievement)
