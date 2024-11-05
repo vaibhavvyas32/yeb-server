@@ -1,14 +1,40 @@
 from django.shortcuts import render
+from django.contrib.auth.models import User
+
 from rest_framework import viewsets
 from .models import User,UserDetail,Achievement,YebOffer,YebApplication,GD,StdGD, Travel, Accommodation, Announcement, ChatMessage, Schedule, Feedback, Submission, Assignment, Payment, Fee, ParticipantTeam, GroupMessage
 from .serializers import UserSerializer, UserDetailSerializer, AchievementSerializer, YebApplicationSerializer, YebOfferSerializer, GdSerializer,StdGDSerializer, TravelSerializer, AccomodationSerializer, AnnouncementSerializer, ChatMessageSerializer, ScheduleSerializer, FeedbackSerializer, SubmissionSerializer, AssignmentSerializer, PaymentSerializer, FeeSerializer, ParticipantTeamSerializer, GroupMessageSerializer
 
+
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework import status
+from rest_framework_simplejwt.tokens import RefreshToken
+from django.contrib.auth import authenticate
+from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.authentication import JWTAuthentication
+
+
+class RegisterView(APIView):
+    def post(self,request):
+        username = request.data.get("username")
+        password = request.data.get("password")
+
+        if User.objects.filter(u_name=username).exists():
+            return Response({"error":" Username already exists"},status= status.HTTP_400_BAD_REQUEST)
+        
+        user =  User.objects.create_user(u_name=username,password=password)
+        user.save()
+
+        return Response({"message": "User created successfully"}, status=status.HTTP_201_CREATED)
+        
 
 
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    permission_classes = [IsAuthenticated]
 
 class UserDetailViewSet(viewsets.ModelViewSet):
     queryset = UserDetail.objects.all()

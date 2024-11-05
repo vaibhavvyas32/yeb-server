@@ -8,6 +8,7 @@ from .views import (
     SubmissionViewSet, AssignmentViewSet, PaymentViewSet, FeeViewSet, 
     ParticipantTeamViewSet, GroupMessageViewSet,StdGDViewSet
 )
+from . import views
 
 
 
@@ -36,5 +37,6 @@ router.register(r'group-messages', GroupMessageViewSet)
 
 
 urlpatterns = [
+    path('register/', views.RegisterView.as_view(),name= 'register'),
     path('', include(router.urls)),
 ]

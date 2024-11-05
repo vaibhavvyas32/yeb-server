@@ -1,15 +1,46 @@
 from django.db import models
 from django.core.exceptions import ValidationError
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
-class User(models.Model):
+
+class CustomUserManager(BaseUserManager):
+    def create_user(self,u_name,password=None,**extra_fields):
+        if not u_name:
+            raise ValueError("the username must be set")
+        user = self.model(u_name=u_name,**extra_fields)
+        user.set_password(password)
+        user.save(using=self.db)
+        return user
+    
+    def create_superuser(self, u_name, password=None, **extra_fields):
+        extra_fields.setdefault("is staff", True)
+        extra_fields.setdefault("is_superuser", True)
+
+        if extra_fields.get("is_staff") is not True:
+            raise ValueError("Superuser must have is_staff=true")
+        if extra_fields.get("is_superuser") is not True:
+            raise ValueError("Superuser must have is_superuser=True.")
+        
+        return self.create_user(u_name, password, **extra_fields)
+
+
+
+
+class User(AbstractBaseUser):
     u_key = models.AutoField(primary_key=True)
-    u_name = models.CharField(max_length=255)
+    u_name = models.CharField(max_length=255, unique=True)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
-    dob = models.DateField()
+    dob = models.DateField(null=True, blank=True)
     active = models.BooleanField(default=True)
     mobile_no = models.CharField(max_length=15)
     profile_pic = models.ImageField(upload_to='profile_pics/', null=True, blank=True)
+
+    objects = CustomUserManager()
+
+    USERNAME_FIELD = 'u_name'
+
+
 
 
 class UserDetail(models.Model):
@@ -68,9 +99,6 @@ class UserDetail(models.Model):
     ('LA', 'Ladakh'),
     ]
 
-
-
-
     u_key = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     p_name = models.CharField(max_length=255)
     p_email = models.EmailField()
@@ -82,6 +110,7 @@ class UserDetail(models.Model):
     marks = models.JSONField()
     shirt_size = models.CharField(max_length=10, choices=SHIRT_SIZE_CHOICES)
     shirt_color = models.CharField(max_length=10, choices=SHIRT_COLOR_CHOICES)
+    
 
 class Achievement(models.Model):
     u_key = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
@@ -89,15 +118,18 @@ class Achievement(models.Model):
     ach2 = models.CharField(max_length=255)
     ach3 = models.CharField(max_length=255)
 
+
 class AchievementPDF(models.Model):
     u_key = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     pdf_file = models.FileField(upload_to='achievement_pdfs/')
+
 
 class StartupQuestion(models.Model):
     u_key = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     startup_name = models.CharField(max_length=255)
     challenges = models.TextField()
     about = models.TextField()
+
 
 class YebOffer(models.Model):
     yeb_key = models.AutoField(primary_key=True)
@@ -111,11 +143,13 @@ class YebOffer(models.Model):
     application_deadline = models.DateField()
     active = models.BooleanField(default=True)
 
+
 class YebApplication(models.Model):
     u_key = models.ForeignKey(User, on_delete=models.CASCADE)
     yeb_key = models.ForeignKey(YebOffer, on_delete=models.CASCADE)
     application_datetime = models.DateTimeField()
     status = models.CharField(max_length=50)
+
 
 class GD(models.Model):
     gd_id = models.AutoField(primary_key=True)
@@ -123,10 +157,12 @@ class GD(models.Model):
     time = models.TimeField()
     link = models.URLField()
 
+
 class StdGD(models.Model):
     gd_id = models.ForeignKey(GD, on_delete=models.CASCADE)
     student_id = models.ForeignKey(User, on_delete=models.CASCADE)
     marks = models.JSONField()
+
 
 class Travel(models.Model):
     t_id = models.AutoField(primary_key=True)
@@ -140,9 +176,11 @@ class Travel(models.Model):
     staff = models.CharField(max_length=255)
     instructions = models.TextField()
 
+
 class UTravel(models.Model):
     u_id = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     t_id = models.ForeignKey(Travel, on_delete=models.CASCADE)
+
 
 class Accommodation(models.Model):
     u_id = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
@@ -151,6 +189,7 @@ class Accommodation(models.Model):
     in_date = models.DateField()
     out_date = models.DateField()
     instructions = models.TextField()
+
 
 class Announcement(models.Model):
     a_id = models.AutoField(primary_key=True)
@@ -162,6 +201,7 @@ class Announcement(models.Model):
     file = models.FileField(upload_to='announcements/', null=True, blank=True)
     link = models.URLField()
 
+
 class ChatMessage(models.Model):
     c_id = models.AutoField(primary_key=True)
     send_message = models.CharField(max_length=255)
@@ -169,6 +209,7 @@ class ChatMessage(models.Model):
     date = models.DateField()
     time = models.TimeField()
     status = models.BooleanField(default=True)
+
 
 class Schedule(models.Model):
     schedule_id = models.AutoField(primary_key=True)
@@ -180,6 +221,7 @@ class Schedule(models.Model):
     time_start = models.TimeField()
     time_end = models.TimeField()
     active = models.BooleanField(default=True)
+
 
 class Feedback(models.Model):
     schedule_id = models.OneToOneField(Schedule, on_delete=models.CASCADE, primary_key=True)
@@ -193,12 +235,14 @@ class Submission(models.Model):
     datetime = models.DateTimeField()
     link = models.URLField()
 
+
 class Assignment(models.Model):
     a_id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=255)
     description = models.TextField()
     deadline = models.DateField()
     yeb = models.ForeignKey(YebOffer, on_delete=models.CASCADE)
+
 
 class Payment(models.Model):
     p_id = models.AutoField(primary_key=True)
@@ -209,15 +253,18 @@ class Payment(models.Model):
     status = models.BooleanField(default=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
+
 class Fee(models.Model):
     fee_id = models.AutoField(primary_key=True)
     description = models.CharField(max_length=255)
     amount = models.IntegerField()
     yeb = models.ForeignKey(YebOffer, on_delete=models.CASCADE)
 
+
 class ParticipantTeam(models.Model):
     g_id = models.AutoField(primary_key=True)
     yeb_name = models.ForeignKey(YebOffer, on_delete=models.CASCADE)
+
 
 class GroupMessage(models.Model):
     s_id = models.ForeignKey(ParticipantTeam, on_delete=models.CASCADE)
