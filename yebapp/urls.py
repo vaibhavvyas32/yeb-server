@@ -6,7 +6,7 @@ from .views import (
     YebApplicationViewSet, GDViewSet, TravelViewSet, AccommodationViewSet, 
     AnnouncementViewSet, ChatMessageViewSet, ScheduleViewSet, FeedbackViewSet, 
     SubmissionViewSet, AssignmentViewSet, PaymentViewSet, FeeViewSet, 
-    ParticipantTeamViewSet, GroupMessageViewSet,StdGDViewSet,LoginView
+    ParticipantTeamViewSet, GroupMessageViewSet,StdGDViewSet,LoginView,LogoutView
 )
 from . import views
 
@@ -39,5 +39,6 @@ router.register(r'group-messages', GroupMessageViewSet)
 urlpatterns = [
     path('register/', views.RegisterView.as_view(),name= 'register'),
     path('login/', views.LoginView.as_view(),name='login'),
+    path('logout/',views.LogoutView.as_view(),name='logout'),
     path('', include(router.urls)),
 ]

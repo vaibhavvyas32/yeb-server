@@ -32,16 +32,16 @@ class RegisterView(APIView):
         return Response({"message": "User created successfully"}, status=status.HTTP_201_CREATED)
     
 
+
+
     
 class LoginView(APIView):
     def post(self,request):
+
         u_name = request.data['u_name']
         password = request.data['password']
 
         user = User.objects.filter(u_name=u_name)
-
-        # if user is None:
-        #     raise AuthenticationFailed('User not found')
 
         try:
             user = User.objects.get(u_name=u_name)
@@ -57,14 +57,20 @@ class LoginView(APIView):
             'iat': datetime.datetime.utcnow(),
         }
 
-        token = jwt.encode(payload,'secret',algorithm='HS256')
+        token = jwt.encode(payload,'django-insecure-$=v-ffi*=!^zpd$15w47x^o!0b1!sz21o0t!btq)c3u$*b9i)r',algorithm='HS256')
 
 
         
         return Response({
-            'jwt': token
+            'message': 'Login Successful',
+            'token': token
         })
-    
+
+class LogoutView(APIView):
+    # permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        return Response({"message": "Logged out successfully"}, status=status.HTTP_200_OK)
         
 
 
@@ -72,7 +78,7 @@ class LoginView(APIView):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
     # authentication_classes = [JWTAuthentication]
 
 class UserDetailViewSet(viewsets.ModelViewSet):
