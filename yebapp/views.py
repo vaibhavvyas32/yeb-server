@@ -12,21 +12,59 @@ from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import authenticate
 from rest_framework.permissions import IsAuthenticated
-from rest_framework_simplejwt.authentication import JWTAuthentication
+from rest_framework.exceptions import AuthenticationFailed
+import jwt, datetime
 
 
 class RegisterView(APIView):
     def post(self,request):
-        username = request.data.get("username")
+        u_name = request.data.get("u_name")
         password = request.data.get("password")
 
-        if User.objects.filter(u_name=username).exists():
+        if User.objects.filter(u_name=u_name).exists():
             return Response({"error":" Username already exists"},status= status.HTTP_400_BAD_REQUEST)
         
-        user =  User.objects.create_user(u_name=username,password=password)
+        # user =  User.objects.create_user(u_name=u_name,password=password)
+        user = User(u_name=u_name)
+        user.set_password(password)
         user.save()
 
         return Response({"message": "User created successfully"}, status=status.HTTP_201_CREATED)
+    
+
+    
+class LoginView(APIView):
+    def post(self,request):
+        u_name = request.data['u_name']
+        password = request.data['password']
+
+        user = User.objects.filter(u_name=u_name)
+
+        # if user is None:
+        #     raise AuthenticationFailed('User not found')
+
+        try:
+            user = User.objects.get(u_name=u_name)
+        except User.DoesNotExist:
+            raise AuthenticationFailed("User not found")
+
+        if not user.check_password(password):
+            raise AuthenticationFailed("Incorrect password!")
+        
+        payload = {
+            'id': user.u_name,
+            'exp': datetime.datetime.utcnow()+ datetime.timedelta(minutes=60),
+            'iat': datetime.datetime.utcnow(),
+        }
+
+        token = jwt.encode(payload,'secret',algorithm='HS256')
+
+
+        
+        return Response({
+            'jwt': token
+        })
+    
         
 
 
@@ -35,6 +73,7 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [IsAuthenticated]
+    # authentication_classes = [JWTAuthentication]
 
 class UserDetailViewSet(viewsets.ModelViewSet):
     queryset = UserDetail.objects.all()

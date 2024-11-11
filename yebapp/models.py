@@ -3,25 +3,29 @@ from django.core.exceptions import ValidationError
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
 
-class CustomUserManager(BaseUserManager):
-    def create_user(self,u_name,password=None,**extra_fields):
-        if not u_name:
-            raise ValueError("the username must be set")
-        user = self.model(u_name=u_name,**extra_fields)
-        user.set_password(password)
-        user.save(using=self.db)
-        return user
+# class CustomUserManager(BaseUserManager):
+#     def create_user(self,u_name,password=None,**extra_fields):
+#         if not u_name:
+#             raise ValueError("the username must be set")
+#         # extra_fields.setdefault('is_active')
+#         user = self.model(u_name=u_name,**extra_fields)
+#         user.set_password(password)
+#         user.save(using=self.db)
+#         return user
     
-    def create_superuser(self, u_name, password=None, **extra_fields):
-        extra_fields.setdefault("is staff", True)
-        extra_fields.setdefault("is_superuser", True)
+#     def create_superuser(self, u_name, password=None, **extra_fields):
+#         extra_fields.setdefault("is_staff", True)
+#         extra_fields.setdefault("is_superuser", True)
 
-        if extra_fields.get("is_staff") is not True:
-            raise ValueError("Superuser must have is_staff=true")
-        if extra_fields.get("is_superuser") is not True:
-            raise ValueError("Superuser must have is_superuser=True.")
+#         if extra_fields.get("is_staff") is not True:
+#             raise ValueError("Superuser must have is_staff=true")
+#         if extra_fields.get("is_superuser") is not True:
+#             raise ValueError("Superuser must have is_superuser=True.")
         
-        return self.create_user(u_name, password, **extra_fields)
+#         return self.create_user(u_name, password, **extra_fields)
+    
+
+
 
 
 
@@ -35,10 +39,6 @@ class User(AbstractBaseUser):
     active = models.BooleanField(default=True)
     mobile_no = models.CharField(max_length=15)
     profile_pic = models.ImageField(upload_to='profile_pics/', null=True, blank=True)
-
-    objects = CustomUserManager()
-
-    USERNAME_FIELD = 'u_name'
 
 
 

@@ -9,22 +9,8 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = '__all__'
     
-    def validate_username(self,value):
-        print("validating username:", value)
-        if len(value) < 3:
-            raise serializers.ValidationError("Username must be at least 3 characters long.")
-        return value
+
     
-    
-
-
-
-
-
-
-
-
-
 class UserDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserDetail
