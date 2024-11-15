@@ -2,8 +2,8 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 
 from rest_framework import viewsets
-from .models import User,UserDetail,Achievement,YebOffer,YebApplication,GD,StdGD, Travel, Accommodation, Announcement, ChatMessage, Schedule, Feedback, Submission, Assignment, Payment, Fee, ParticipantTeam, GroupMessage
-from .serializers import UserSerializer, UserDetailSerializer, AchievementSerializer, YebApplicationSerializer, YebOfferSerializer, GdSerializer,StdGDSerializer, TravelSerializer, AccomodationSerializer, AnnouncementSerializer, ChatMessageSerializer, ScheduleSerializer, FeedbackSerializer, SubmissionSerializer, AssignmentSerializer, PaymentSerializer, FeeSerializer, ParticipantTeamSerializer, GroupMessageSerializer
+from .models import User,UserDetail,Achievement,YebOffer,YebApplication, Accommodation, Announcement, ChatMessage, Schedule, Feedback, Submission, Assignment, Payment, Fee, ParticipantTeam, GroupMessage
+from .serializers import UserSerializer, UserDetailSerializer, AchievementSerializer, YebApplicationSerializer, YebOfferSerializer, AccomodationSerializer, AnnouncementSerializer, ChatMessageSerializer, ScheduleSerializer, FeedbackSerializer, SubmissionSerializer, AssignmentSerializer, PaymentSerializer, FeeSerializer, ParticipantTeamSerializer, GroupMessageSerializer
 
 
 from rest_framework.response import Response
@@ -11,7 +11,7 @@ from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import authenticate
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import AllowAny,IsAuthenticated
 from rest_framework.exceptions import AuthenticationFailed
 import jwt, datetime
 
@@ -67,7 +67,7 @@ class LoginView(APIView):
         })
 
 class LogoutView(APIView):
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
 
     def post(self, request):
         return Response({"message": "Logged out successfully"}, status=status.HTTP_200_OK)
@@ -97,17 +97,17 @@ class YebApplicationViewSet(viewsets.ModelViewSet):
     queryset = YebApplication.objects.all()
     serializer_class = YebApplicationSerializer
 
-class GDViewSet(viewsets.ModelViewSet):
-    queryset = GD.objects.all()
-    serializer_class = GdSerializer
+# class GDViewSet(viewsets.ModelViewSet):
+#     queryset = GD.objects.all()
+#     serializer_class = GdSerializer
 
-class StdGDViewSet(viewsets.ModelViewSet):
-    queryset = StdGD.objects.all()
-    serializer_class = StdGDSerializer
+# class StdGDViewSet(viewsets.ModelViewSet):
+#     queryset = StdGD.objects.all()
+#     serializer_class = StdGDSerializer
 
-class TravelViewSet(viewsets.ModelViewSet):
-    queryset = Travel.objects.all()
-    serializer_class = TravelSerializer
+# class TravelViewSet(viewsets.ModelViewSet):
+#     queryset = Travel.objects.all()
+#     serializer_class = TravelSerializer
 
 class AccommodationViewSet(viewsets.ModelViewSet):
     queryset = Accommodation.objects.all()

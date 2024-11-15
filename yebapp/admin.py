@@ -7,10 +7,10 @@ from .models import (
     StartupQuestion,
     YebOffer,
     YebApplication,
-    GD,
-    StdGD,
-    Travel,
-    UTravel,
+    # GD,
+    # StdGD,
+    # Travel,
+    # UTravel,
     Accommodation,
     Announcement,
     ChatMessage,
@@ -58,25 +58,25 @@ class YebOfferAdmin(admin.ModelAdmin):
 class YebApplicationAdmin(admin.ModelAdmin):
     list_display = ('u_key', 'yeb_key', 'application_datetime', 'status')
 
-@admin.register(GD)
-class GDAdmin(admin.ModelAdmin):
-    list_display = ('gd_id', 'date', 'time', 'link')
+# @admin.register(GD)
+# class GDAdmin(admin.ModelAdmin):
+#     list_display = ('gd_id', 'date', 'time', 'link')
 
-@admin.register(StdGD)
-class StdGDAdmin(admin.ModelAdmin):
-    list_display = ('gd_id', 'student_id', 'marks')
-    form = MarksForm
-    exclude = ['marks']
+# @admin.register(StdGD)
+# class StdGDAdmin(admin.ModelAdmin):
+#     list_display = ('gd_id', 'student_id', 'marks')
+#     form = MarksForm
+#     exclude = ['marks']
 
 
-@admin.register(Travel)
-class TravelAdmin(admin.ModelAdmin):
-    list_display = ('t_id', 'u_id', 'yeb_event', 'from_location', 'to_location', 'amount')
-    search_fields = ('yeb_event', 'from_location', 'to_location')
+# @admin.register(Travel)
+# class TravelAdmin(admin.ModelAdmin):
+#     list_display = ('t_id', 'u_id', 'yeb_event', 'from_location', 'to_location', 'amount')
+#     search_fields = ('yeb_event', 'from_location', 'to_location')
 
-@admin.register(UTravel)
-class UTravelAdmin(admin.ModelAdmin):
-    list_display = ('u_id', 't_id')
+# @admin.register(UTravel)
+# class UTravelAdmin(admin.ModelAdmin):
+#     list_display = ('u_id', 't_id')
 
 @admin.register(Accommodation)
 class AccommodationAdmin(admin.ModelAdmin):

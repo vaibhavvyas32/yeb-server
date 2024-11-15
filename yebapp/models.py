@@ -150,38 +150,6 @@ class YebApplication(models.Model):
     application_datetime = models.DateTimeField()
     status = models.CharField(max_length=50)
 
-
-class GD(models.Model):
-    gd_id = models.AutoField(primary_key=True)
-    date = models.DateField()
-    time = models.TimeField()
-    link = models.URLField()
-
-
-class StdGD(models.Model):
-    gd_id = models.ForeignKey(GD, on_delete=models.CASCADE)
-    student_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    marks = models.JSONField()
-
-
-class Travel(models.Model):
-    t_id = models.AutoField(primary_key=True)
-    u_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    yeb_event = models.CharField(max_length=255)
-    from_location = models.CharField(max_length=255)
-    to_location = models.CharField(max_length=255)
-    pickup = models.CharField(max_length=255)
-    drop = models.CharField(max_length=255)
-    amount = models.IntegerField()
-    staff = models.CharField(max_length=255)
-    instructions = models.TextField()
-
-
-class UTravel(models.Model):
-    u_id = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
-    t_id = models.ForeignKey(Travel, on_delete=models.CASCADE)
-
-
 class Accommodation(models.Model):
     u_id = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     r_no = models.CharField(max_length=10)

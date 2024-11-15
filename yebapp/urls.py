@@ -3,10 +3,10 @@ from django.urls import path,include
 from rest_framework.routers import DefaultRouter
 from .views import (
     UserViewSet, UserDetailViewSet, AchievementViewSet, YebOfferViewSet, 
-    YebApplicationViewSet, GDViewSet, TravelViewSet, AccommodationViewSet, 
+    YebApplicationViewSet,  AccommodationViewSet, 
     AnnouncementViewSet, ChatMessageViewSet, ScheduleViewSet, FeedbackViewSet, 
     SubmissionViewSet, AssignmentViewSet, PaymentViewSet, FeeViewSet, 
-    ParticipantTeamViewSet, GroupMessageViewSet,StdGDViewSet,LoginView,LogoutView
+    ParticipantTeamViewSet, GroupMessageViewSet,LoginView,LogoutView
 )
 from . import views
 
@@ -20,9 +20,9 @@ router.register(r'user-details', UserDetailViewSet)
 router.register(r'achievements', AchievementViewSet)
 router.register(r'yeb-offers', YebOfferViewSet)
 router.register(r'yeb-applications', YebApplicationViewSet)
-router.register(r'gds', GDViewSet)
-router.register(r'std-gd', StdGDViewSet)
-router.register(r'travels', TravelViewSet)
+# router.register(r'gds', GDViewSet)
+# router.register(r'std-gd', StdGDViewSet)
+# router.register(r'travels', TravelViewSet)
 router.register(r'accommodations', AccommodationViewSet)
 router.register(r'chat-messages', ChatMessageViewSet)
 router.register(r'schedules', ScheduleViewSet)

@@ -1,7 +1,7 @@
 from rest_framework import serializers,status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import User,UserDetail,Achievement,YebOffer,YebApplication,GD,StdGD, Travel, Accommodation, Announcement, ChatMessage, Schedule, Feedback, Submission, Assignment, Payment, Fee, ParticipantTeam, GroupMessage
+from .models import User,UserDetail,Achievement,YebOffer,YebApplication, Accommodation, Announcement, ChatMessage, Schedule, Feedback, Submission, Assignment, Payment, Fee, ParticipantTeam, GroupMessage
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -31,26 +31,26 @@ class YebApplicationSerializer(serializers.ModelSerializer):
         model = YebApplication
         fields = '__all__'
 
-class GdSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = GD
-        fields = '__all__'
+# class GdSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = GD
+#         fields = '__all__'
 
-class StdGDSerializer(serializers.ModelSerializer):
-    user_marks = serializers.SerializerMethodField()
+# class StdGDSerializer(serializers.ModelSerializer):
+#     user_marks = serializers.SerializerMethodField()
 
-    class Meta:
-        model = StdGD
-        fields = ['gd_id','student_id','marks','user_marks']
+#     class Meta:
+#         model = StdGD
+#         fields = ['gd_id','student_id','marks','user_marks']
 
-    def get_user_marks(self,obj):
-        user_detail = UserDetail.objects.filter(u_key=obj.student_id).first()
-        return user_detail.marks if user_detail else None
+#     def get_user_marks(self,obj):
+#         user_detail = UserDetail.objects.filter(u_key=obj.student_id).first()
+#         return user_detail.marks if user_detail else None
 
-class TravelSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Travel
-        fields = '__all__'
+# class TravelSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Travel
+#         fields = '__all__'
 
 class AccomodationSerializer(serializers.ModelSerializer):
     class Meta:

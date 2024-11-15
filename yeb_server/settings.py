@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'yebapp',
     'rest_framework',
     'rest_framework_simplejwt',
-    'whitenoise',
+    'travel',
+    'group_discussion',
 ]
 
 MIDDLEWARE = [
