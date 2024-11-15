@@ -30,12 +30,12 @@ class UserAdmin(admin.ModelAdmin):
     list_display = ('u_key', 'u_name', 'first_name', 'last_name', 'dob', 'active')
     search_fields = ('u_name', 'first_name', 'last_name')
 
-@admin.register(UserDetail)
-class UserDetailAdmin(admin.ModelAdmin):
-    list_display = ('u_key', 'p_name', 'p_email', 'p_phone', 'school')
-    exclude = ['marks']
-    form = MarksForm
-    search_fields = ('p_name', 'p_email')
+# @admin.register(UserDetail)
+# class UserDetailAdmin(admin.ModelAdmin):
+#     list_display = ('u_key', 'p_name', 'p_email', 'p_phone', 'school')
+#     exclude = ['marks']
+#     form = MarksForm
+#     search_fields = ('p_name', 'p_email')
 
 @admin.register(Achievement)
 class AchievementAdmin(admin.ModelAdmin):

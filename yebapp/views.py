@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 from rest_framework import viewsets
 from .models import User,UserDetail,Achievement,YebOffer,YebApplication, Accommodation, Announcement, ChatMessage, Schedule, Feedback, Submission, Assignment, Payment, Fee, ParticipantTeam, GroupMessage
-from .serializers import UserSerializer, UserDetailSerializer, AchievementSerializer, YebApplicationSerializer, YebOfferSerializer, AccomodationSerializer, AnnouncementSerializer, ChatMessageSerializer, ScheduleSerializer, FeedbackSerializer, SubmissionSerializer, AssignmentSerializer, PaymentSerializer, FeeSerializer, ParticipantTeamSerializer, GroupMessageSerializer
+from .serializers import UserSerializer, AchievementSerializer, YebApplicationSerializer, YebOfferSerializer, AccomodationSerializer, AnnouncementSerializer, ChatMessageSerializer, ScheduleSerializer, FeedbackSerializer, SubmissionSerializer, AssignmentSerializer, PaymentSerializer, FeeSerializer, ParticipantTeamSerializer, GroupMessageSerializer
 
 
 from rest_framework.response import Response
@@ -81,9 +81,9 @@ class UserViewSet(viewsets.ModelViewSet):
     # permission_classes = [IsAuthenticated]
     # authentication_classes = [JWTAuthentication]
 
-class UserDetailViewSet(viewsets.ModelViewSet):
-    queryset = UserDetail.objects.all()
-    serializer_class = UserDetailSerializer
+# class UserDetailViewSet(viewsets.ModelViewSet):
+#     queryset = UserDetail.objects.all()
+#     serializer_class = UserDetailSerializer
 
 class AchievementViewSet(viewsets.ModelViewSet):
     queryset = Achievement.objects.all()
