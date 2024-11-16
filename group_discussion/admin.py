@@ -13,3 +13,4 @@ class StdGDAdmin(admin.ModelAdmin):
     list_display = ('gd_id', 'student_id', 'marks')
     form = MarksForm
     exclude = ['marks']
+

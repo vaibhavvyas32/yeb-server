@@ -1,7 +1,7 @@
 from rest_framework import serializers,status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import User,UserDetail,Achievement,YebOffer,YebApplication, Accommodation, Announcement, ChatMessage, Schedule, Feedback, Submission, Assignment, Payment, Fee, ParticipantTeam, GroupMessage
+from .models import User,Achievement,YebOffer,YebApplication, Accommodation, Announcement, ChatMessage, Schedule, Feedback, Submission, Assignment, Payment, Fee, ParticipantTeam, GroupMessage
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -10,10 +10,6 @@ class UserSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     
-class UserDetailSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = UserDetail
-        fields = '__all__'
     
 
 class AchievementSerializer(serializers.ModelSerializer):

@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 
 from rest_framework import viewsets
-from .models import User,UserDetail,Achievement,YebOffer,YebApplication, Accommodation, Announcement, ChatMessage, Schedule, Feedback, Submission, Assignment, Payment, Fee, ParticipantTeam, GroupMessage
+from .models import User,Achievement,YebOffer,YebApplication, Accommodation, Announcement, ChatMessage, Schedule, Feedback, Submission, Assignment, Payment, Fee, ParticipantTeam, GroupMessage
 from .serializers import UserSerializer, AchievementSerializer, YebApplicationSerializer, YebOfferSerializer, AccomodationSerializer, AnnouncementSerializer, ChatMessageSerializer, ScheduleSerializer, FeedbackSerializer, SubmissionSerializer, AssignmentSerializer, PaymentSerializer, FeeSerializer, ParticipantTeamSerializer, GroupMessageSerializer
 
 

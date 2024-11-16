@@ -1,6 +1,6 @@
 from django import forms
 
-from yebapp.models import UserDetail
+from user_detail.models import UserDetail
 
 
 class MarksForm(forms.ModelForm):

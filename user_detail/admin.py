@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from yebapp.forms import MarksForm
-from .model import UserDetail
+from .forms import MarksForm
+from .models import UserDetail
 # Register your models here.
 
 

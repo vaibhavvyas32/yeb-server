@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'travel',
     'group_discussion',
-    'user_detail'
+    'user_detail',
 ]
 
 MIDDLEWARE = [

@@ -2,7 +2,7 @@
 from django.urls import path,include
 from rest_framework.routers import DefaultRouter
 from .views import (
-    UserViewSet, UserDetailViewSet, AchievementViewSet, YebOfferViewSet, 
+    UserViewSet, AchievementViewSet, YebOfferViewSet, 
     YebApplicationViewSet,  AccommodationViewSet, 
     AnnouncementViewSet, ChatMessageViewSet, ScheduleViewSet, FeedbackViewSet, 
     SubmissionViewSet, AssignmentViewSet, PaymentViewSet, FeeViewSet, 
@@ -16,7 +16,7 @@ from . import views
 router = DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'announcements', AnnouncementViewSet)
-router.register(r'user-details', UserDetailViewSet)
+# router.register(r'user-details', UserDetailViewSet)
 router.register(r'achievements', AchievementViewSet)
 router.register(r'yeb-offers', YebOfferViewSet)
 router.register(r'yeb-applications', YebApplicationViewSet)
