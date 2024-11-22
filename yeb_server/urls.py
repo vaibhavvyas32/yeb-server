@@ -25,6 +25,7 @@ urlpatterns = [
     path('api/', include('yebapp.urls')),
     path('api/', include('travel.urls')),
     path('api/', include('group_discussion.urls')),
+    path('api/', include('user_detail.urls')),
     path('api/token/', TokenObtainPairView.as_view(), name ='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     

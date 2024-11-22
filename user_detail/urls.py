@@ -4,3 +4,5 @@ from .views import UserDetailViewSet
 
 router = DefaultRouter()
 router.register(r'user-details', UserDetailViewSet)
+
+urlpatterns = router.urls
